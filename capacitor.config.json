@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ejercicio-ionic",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
