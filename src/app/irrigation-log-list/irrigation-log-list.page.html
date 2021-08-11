@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title
+      >Mediciones de la válvula {{logs[0]?.solenoidValveId ||
+      'Indefinido'}}</ion-title
+    >
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let log of logs">
+      <ion-label>
+        <h1>{{ log.date.toLocaleString() }}</h1>
+        <h2>{{ log.isOpened }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

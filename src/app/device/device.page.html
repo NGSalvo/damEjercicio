@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{device.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="highcharts" style="width: 100%; height: 300px"></div>
+  <div *ngIf="!isOpen; else opened">
+    <ion-button
+      (click)="toggleValve()"
+      expand="block"
+      fill="solid"
+      class="ion-text-uppercase"
+    >
+      Abrir electroválvula
+    </ion-button>
+  </div>
+  <ng-template #opened>
+    <ion-button
+      (click)="toggleValve()"
+      expand="block"
+      fill="solid"
+      class="ion-text-uppercase"
+    >
+      Cerrar electroválvula
+    </ion-button>
+  </ng-template>
+  <ion-button
+    [routerLink]="['/device/measurements/' + deviceId]"
+    expand="block"
+    fill="outline"
+    class="ion-text-uppercase"
+  >
+    Ver todas las mediciones
+  </ion-button>
+  <ion-button
+    (click)="showIrrigationLog()"
+    expand="block"
+    fill="outline"
+    class="ion-text-uppercase"
+  >
+    Ver log riegos
+  </ion-button>
+</ion-content>

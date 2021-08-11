@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Device } from '../models/Device';
+import { DeviceService } from '../services/device.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public devices: Device[];
 
-  constructor() {}
-
+  constructor(private deviceService: DeviceService) {
+    this.devices = deviceService.getDevices();
+  }
 }
